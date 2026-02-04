@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - dimhyena2222</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #000;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #666;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+            font-weight: 400;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            background: #fff;
+            padding: 30px;
+            border-left: 4px solid #000;
+            margin: 30px 0;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: #000;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .secret-message {
+            opacity: 0;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 4px;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .secret-message.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="secret-message" id="secretMessage">🕵️ You found a secret!</div>
+    <a href="index.html" class="back-link">← Back</a>
+
+    <div class="container">
+        <h1>About Me</h1>
+        <p class="subtitle">Developer, Creator, Problem Solver</p>
+
+        <div class="section">
+            <h2>My Journey</h2>
+            <p>
+                Hey there! I'm dimhyena2222, though most people just call me Dim. My journey into the world of technology began at age 12 when I accidentally broke my dad's computer trying to install a game mod. Instead of getting in trouble, I spent the next week learning how to fix it—and I've been hooked on coding ever since.
+            </p>
+            <p>
+                What started as a curiosity about "how things work" evolved into a passion for creating digital experiences. I taught myself HTML and CSS by rebuilding my favorite websites from scratch, then dove into JavaScript when I realized static pages weren't enough. The thrill of seeing my code come to life never gets old.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>What I Do</h2>
+            <p>
+                I'm a full-stack developer with a love for clean, minimalist design and efficient code. Whether it's building interactive web games (like the ones you see on this site), crafting responsive user interfaces, or solving complex algorithmic challenges, I'm always up for a new project.
+            </p>
+            <p>
+                My approach is simple: write code that's elegant, maintainable, and actually works. I believe the best technology is invisible—it just works seamlessly, letting users focus on what matters.
+            </p>
+        </div>
+
+        <div class="highlight">
+            <h2>Philosophy</h2>
+            <p>
+                "Code is poetry written in logic. Every function is a verse, every algorithm a stanza. The best programs are those that solve problems so elegantly, they feel inevitable."
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Beyond the Screen</h2>
+            <p>
+                When I'm not coding, you'll find me exploring game design theory, experimenting with generative art, or diving deep into rabbit holes about computer science history. I'm fascinated by the pioneers who built the foundations we code on today.
+            </p>
+            <p>
+                I also believe in giving back to the community that taught me so much. I contribute to open-source projects, help newcomers debug their first programs, and occasionally write tutorials breaking down complex concepts into digestible pieces.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Skills & Technologies</h2>
+            <div class="skills">
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Game Development</span>
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">Problem Solving</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Looking Ahead</h2>
+            <p>
+                I'm always learning, always building, always pushing myself to create something better than yesterday. Whether it's mastering a new framework, contributing to exciting projects, or building the next game that keeps people entertained for hours—I'm ready for it.
+            </p>
+            <p>
+                This portfolio is just the beginning. Stay tuned for more projects, experiments, and digital adventures. The best code is yet to be written.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Secret message when hovering over specific words
+        const paragraphs = document.querySelectorAll('p');
+        paragraphs.forEach(p => {
+            p.innerHTML = p.innerHTML.replace(/code/gi, '<span style="cursor: help;" title="The matrix has you..." onmouseover="showSecret()">code</span>');
+        });
+
+        function showSecret() {
+            const msg = document.getElementById('secretMessage');
+            msg.classList.add('show');
+            setTimeout(() => msg.classList.remove('show'), 2000);
+        }
+
+        // Skill tags do something fun when clicked
+        const skillTags = document.querySelectorAll('.skill-tag');
+        skillTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const randomColor = `hsl(${Math.random() * 360}, 70%, 50%)`;
+                tag.style.background = randomColor;
+                tag.style.borderColor = randomColor;
+                tag.textContent = tag.textContent + '!';
+                setTimeout(() => {
+                    tag.textContent = tag.textContent.replace('!', '');
+                    tag.style.background = '#000';
+                }, 1000);
+            });
+        });
+
+        // Typing "secret" reveals a hidden message
+        let typedKeys = [];
+        document.addEventListener('keypress', (e) => {
+            typedKeys.push(e.key);
+            if (typedKeys.length > 6) typedKeys.shift();
+            
+            if (typedKeys.join('') === 'secret') {
+                const highlight = document.querySelector('.highlight');
+                highlight.style.background = '#fffacd';
+                highlight.style.borderLeft = '4px solid #ffd700';
+                highlight.innerHTML += '<p style="margin-top: 20px; color: #ff69b4;"><em>✨ You discovered the secret code! You are a true explorer! ✨</em></p>';
+                typedKeys = [];
+            }
+        });
+
+        // Triple-click the title to flip the page
+        const title = document.querySelector('h1');
+        let clickCount = 0;
+        let clickTimer;
+        
+        title.addEventListener('click', () => {
+            clickCount++;
+            clearTimeout(clickTimer);
+            
+            if (clickCount === 3) {
+                document.body.style.transform = 'rotateY(360deg)';
+                document.body.style.transition = 'transform 1s';
+                setTimeout(() => {
+                    document.body.style.transform = 'rotateY(0deg)';
+                }, 1000);
+                clickCount = 0;
+            }
+            
+            clickTimer = setTimeout(() => {
+                clickCount = 0;
+            }, 500);
+        });
+    </script>
+</body>
+</html>

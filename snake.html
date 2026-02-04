@@ -488,6 +488,32 @@
         tryAgainBtn.addEventListener('click', () => {
             startGame();
         });
+
+        // Easter egg: Type "rainbow" to make the snake rainbow
+        let typedKeys = [];
+        document.addEventListener('keypress', (e) => {
+            typedKeys.push(e.key);
+            if (typedKeys.length > 7) typedKeys.shift();
+            
+            if (typedKeys.join('') === 'rainbow') {
+                alert('🌈 Rainbow mode activated! (Just kidding, but you found the secret!)');
+                typedKeys = [];
+            }
+        });
+
+        // Easter egg: Score 69 or 420 gives special message
+        const originalUpdate = update;
+        function updateWithEasterEggs() {
+            originalUpdate();
+            if (score === 69 && gameActive) {
+                gameStatusDisplay.textContent = 'Nice. 😎';
+            } else if (score === 420 && gameActive) {
+                gameStatusDisplay.textContent = 'Blazing! 🔥';
+            } else if (score % 100 === 0 && score > 0 && gameActive) {
+                gameStatusDisplay.textContent = `${score} points! You're on fire! 🔥`;
+            }
+        }
+        update = updateWithEasterEggs;
     </script>
 </body>
 </html>

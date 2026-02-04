@@ -471,15 +471,73 @@
             startGame();
         });
 
-        // Game loop - 60 FPS
-        function gameLoop() {
-            update();
-            requestAnimationFrame(gameLoop);
-        }
-        gameLoop();
+        // Easter egg: Hold space to make obstacles disappear temporarily
+        let spaceHoldTime = 0;
+        let spaceHeld = false;
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && !spaceHeld && gameActive) {
+                spaceHeld = true;
+                const holdInterval = setInterval(() => {
+                    spaceHoldTime++;
+                    if (spaceHoldTime > 30) {
+                        obstacles = [];
+                        gameStatusDisplay.textContent = '✨ INVINCIBLE MODE! ✨';
+                        clearInterval(holdInterval);
+                        setTimeout(() => {
+                            gameStatusDisplay.textContent = 'Running...';
+                            spaceHoldTime = 0;
+                        }, 2000);
+                    }
+                    if (!spaceHeld) clearInterval(holdInterval);
+                }, 100);
+            }
+        });
 
-        // Initial draw
-        draw();
+        document.addEventListener('keyup', (e) => {
+            if (e.code === 'Space') {
+                spaceHeld = false;
+                spaceHoldTime = 0;
+            }
+        });
+
+        // Easter egg: Special scores give messages
+        let lastScoreMessage = 0;
+        const originalUpdate = update;
+        function updateWithEasterEggs() {
+            originalUpdate();
+            if (score === 100 && lastScoreMessage !== 100) {
+                gameStatusDisplay.textContent = '💯 CENTURY!';
+                lastScoreMessage = 100;
+                setTimeout(() => { if (gameActive) gameStatusDisplay.textContent = 'Running...'; }, 2000);
+            } else if (score === 500 && lastScoreMessage !== 500) {
+                gameStatusDisplay.textContent = '🏆 LEGENDARY!';
+                lastScoreMessage = 500;
+                setTimeout(() => { if (gameActive) gameStatusDisplay.textContent = 'Running...'; }, 2000);
+            } else if (score === 1000 && lastScoreMessage !== 1000) {
+                gameStatusDisplay.textContent = '👑 MASTER OF THE DESERT!';
+                lastScoreMessage = 1000;
+                setTimeout(() => { if (gameActive) gameStatusDisplay.textContent = 'Running...'; }, 2000);
+            }
+        }
+        update = updateWithEasterEggs;
+
+        // Easter egg: Click the dino to make it do a dance
+        canvas.addEventListener('dblclick', (e) => {
+            if (!gameActive) {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                if (x < 100) {
+                    let bounces = 0;
+                    const bounceInterval = setInterval(() => {
+                        dino.y -= 20;
+                        setTimeout(() => dino.y += 20, 100);
+                        bounces++;
+                        if (bounces >= 3) clearInterval(bounceInterval);
+                    }, 300);
+                    draw();
+                }
+            }
+        });
     </script>
 </body>
 </html>
