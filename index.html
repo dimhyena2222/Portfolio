@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dimhyena2222's Portfolio</title>
+    <title>dimhyena2222's Portfolio (by abriene)</title>
     <style>
         * {
             margin: 0;
@@ -12,409 +12,96 @@
         }
         
         body {
-            font-family: 'Comic Sans MS', 'Arial', sans-serif;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            color: #fff;
-            line-height: 1.6;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f6f6f3;
+            color: #111;
             min-height: 100vh;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            margin-top: 50px;
-        }
-        
-        h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
-            color: #fff;
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .description {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-bottom: 50px;
-            line-height: 1.8;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 14px 40px;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a6f, #f06292, #ba68c8);
-            color: #fff;
-            text-decoration: none;
-            border: 3px solid #fff;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3),
-                        0 0 20px rgba(255, 107, 107, 0.5);
-            animation: buttonPulse 2s infinite;
-        }
-
-        @keyframes buttonPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        .btn:hover {
-            background: linear-gradient(45deg, #4facfe, #00f2fe, #43e97b, #38f9d7);
-            transform: scale(1.1) rotate(-2deg);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4),
-                        0 0 30px rgba(79, 172, 254, 0.8);
-        }
-
-        /* Arcade Hub Styles */
-        .arcade-section {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px dashed rgba(255, 255, 255, 0.2);
-        }
-
-        .arcade-title {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: #00ffff;
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-            text-transform: uppercase;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .game-card {
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px 10px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 3px solid #fff;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
+            padding: 32px;
+            line-height: 1.6;
         }
 
-        .game-card:hover {
-            transform: translateY(-8px) scale(1.05);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .game-card .icon {
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-
-        .game-label {
-            font-size: 0.9rem;
-            font-weight: bold;
-            font-family: 'Courier New', Courier, monospace;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Color Coding */
-        .game-card.snake { border-color: #39FF14; color: #39FF14; text-shadow: 0 0 8px #39FF14; box-shadow: inset 0 0 10px #39FF14; }
-        .game-card.trex { border-color: #FF9900; color: #FF9900; text-shadow: 0 0 8px #FF9900; box-shadow: inset 0 0 10px #FF9900; }
-        .game-card.space { border-color: #00F3FF; color: #00F3FF; text-shadow: 0 0 8px #00F3FF; box-shadow: inset 0 0 10px #00F3FF; }
-        .game-card.breakout { border-color: #FF00FF; color: #FF00FF; text-shadow: 0 0 8px #FF00FF; box-shadow: inset 0 0 10px #FF00FF; }
-        .game-card.tetris { border-color: #FF3131; color: #FF3131; text-shadow: 0 0 8px #FF3131; box-shadow: inset 0 0 10px #FF3131; }
-
-        .game-card:hover.snake { box-shadow: 0 0 25px #39FF14; }
-        .game-card:hover.trex { box-shadow: 0 0 25px #FF9900; }
-        .game-card:hover.space { box-shadow: 0 0 25px #00F3FF; }
-        .game-card:hover.breakout { box-shadow: 0 0 25px #FF00FF; }
-        .game-card:hover.tetris { box-shadow: 0 0 25px #FF3131; }
-
-        .secret-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(45deg, #ff69b4, #ff1493);
-            color: #fff;
-            border: 3px solid #fff;
-            border-radius: 50px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite, rotate 4s linear infinite;
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
-        }
-
-        .secret-btn:hover {
-            transform: scale(1.2) rotate(15deg);
-            box-shadow: 0 0 40px rgba(255, 105, 180, 1);
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .growing-btn {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(45deg, #4CAF50, #8BC34A, #CDDC39);
-            color: #fff;
-            border: 3px solid #fff;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
-            text-transform: uppercase;
-        }
-
-        .growing-btn:hover {
-            box-shadow: 0 0 40px rgba(76, 175, 80, 1);
-        }
-
-        .konami-message {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: linear-gradient(45deg, #000, #ff00ff, #00ffff);
-            color: #0f0;
-            padding: 30px 50px;
-            border: 5px solid #0f0;
+        .container {
+            width: 100%;
+            max-width: 760px;
+            padding: 56px 40px;
+            background: #fff;
+            border: 1px solid #ddd;
             border-radius: 20px;
-            font-family: 'Courier New', monospace;
-            font-size: 1.5rem;
-            z-index: 10000;
-            animation: glitch 0.3s infinite, rainbow-border 2s linear infinite;
-            box-shadow: 0 0 50px rgba(0, 255, 0, 0.8);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
         }
 
-        @keyframes glitch {
-            0% { transform: translate(-50%, -50%); }
-            33% { transform: translate(-51%, -49%); }
-            66% { transform: translate(-49%, -51%); }
-            100% { transform: translate(-50%, -50%); }
+        h1 {
+            font-size: clamp(2.6rem, 6vw, 4rem);
+            font-weight: 600;
+            letter-spacing: -0.04em;
+            margin-bottom: 16px;
         }
 
-        @keyframes rainbow-border {
-            0% { border-color: #ff0000; }
-            16% { border-color: #ff7f00; }
-            33% { border-color: #ffff00; }
-            50% { border-color: #00ff00; }
-            66% { border-color: #0000ff; }
-            83% { border-color: #8b00ff; }
-            100% { border-color: #ff0000; }
+        .description {
+            max-width: 44rem;
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 28px;
         }
 
-        .click-counter {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            font-size: 1rem;
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 18px;
+            border: 1px solid #111;
+            border-radius: 999px;
+            color: #111;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .link:hover {
+            background: #111;
             color: #fff;
-            background: linear-gradient(45deg, #f093fb, #f5576c);
-            padding: 10px 20px;
-            border-radius: 50px;
-            border: 2px solid #fff;
-            opacity: 0;
-            transition: opacity 0.3s;
-            box-shadow: 0 0 20px rgba(245, 87, 108, 0.8);
-            font-weight: 700;
         }
 
-        .click-counter.show {
-            opacity: 1;
+        .link.placeholder {
+            color: #777;
+            border-color: #ddd;
+            background: #fafafa;
+            cursor: default;
+        }
+
+        .link.placeholder:hover {
+            background: #fafafa;
+            color: #777;
+        }
+
+        .meta {
+            margin-top: 22px;
+            color: #777;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 36px 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="click-counter" id="clickCounter">Clicks: 0</div>
-    <div class="konami-message" id="konamiMessage">🎮 KONAMI CODE ACTIVATED! 🎮</div>
-    <div class="container">
-        <h1>dimhyena2222</h1>
-        
-        <p class="description">
-            A passionate developer and creative problem-solver with a focus on building clean, modern web experiences.
-        </p>
-        
-        <div class="button-group">
-            <a href="about.html" class="btn">About Me</a>
-            <button class="btn" onclick="document.querySelector('.arcade-section').scrollIntoView({behavior: 'smooth'})">Go to Arcade</button>
-        </div>
-
-        <!-- Arcade Hub Section -->
-        <div class="arcade-section">
-            <h2 class="arcade-title">🎮 Arcade Hub 🎮</h2>
-            <div class="games-grid">
-                <a href="snake.html" class="game-card snake">
-                    <span class="icon">🐍</span>
-                    <span class="game-label">Snake</span>
-                </a>
-                <a href="trex.html" class="game-card trex">
-                    <span class="icon">🦖</span>
-                    <span class="game-label">T-Rex</span>
-                </a>
-                <a href="#" class="game-card space">
-                    <span class="icon">🚀</span>
-                    <span class="game-label">Invaders</span>
-                </a>
-                <a href="#" class="game-card breakout">
-                    <span class="icon">🧱</span>
-                    <span class="game-label">Breakout</span>
-                </a>
-                <a href="#" class="game-card tetris">
-                    <span class="icon">🕹️</span>
-                    <span class="game-label">Tetris</span>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <button class="growing-btn" id="growingBtn">Click Me!</button>
-    <button class="secret-btn" id="secretBtn">🎉</button>
-
-    <script>
-        // Growing button easter egg
-        const growingBtn = document.getElementById('growingBtn');
-        let growSize = 1;
-        growingBtn.addEventListener('click', () => {
-            growSize += 0.1;
-            growingBtn.style.transform = `scale(${growSize})`;
-            if (growSize > 3) {
-                growingBtn.textContent = "I'M HUGE!";
-            }
-            if (growSize > 5) {
-                growingBtn.textContent = "STOP!!!";
-            }
-            if (growSize > 7) {
-                growingBtn.style.transform = 'scale(1)';
-                growSize = 1;
-                growingBtn.textContent = "Click Me!";
-            }
-        });
-
-        // Secret button that does random things
-        const secretBtn = document.getElementById('secretBtn');
-        const emojis = ['🎉', '🎊', '🎈', '🎁', '🦄', '🌈', '⭐', '💫', '✨', '🎮'];
-        let emojiIndex = 0;
-        secretBtn.addEventListener('click', () => {
-            emojiIndex = (emojiIndex + 1) % emojis.length;
-            secretBtn.textContent = emojis[emojiIndex];
-            document.body.style.background = `hsl(${Math.random() * 360}, 70%, 95%)`;
-            setTimeout(() => {
-                document.body.style.background = '#f9f9f9';
-            }, 500);
-        });
-
-        // Click counter
-        const clickCounter = document.getElementById('clickCounter');
-        let totalClicks = 0;
-        document.addEventListener('click', () => {
-            totalClicks++;
-            clickCounter.textContent = `Clicks: ${totalClicks}`;
-            clickCounter.classList.add('show');
-            if (totalClicks === 100) {
-                alert('🎉 Congratulations! You clicked 100 times!');
-            }
-        });
-
-        // Konami code easter egg (up, up, down, down, left, right, left, right, b, a)
-        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-        let konamiIndex = 0;
-        const konamiMessage = document.getElementById('konamiMessage');
-        
-        document.addEventListener('keydown', (e) => {
-            const key = e.key.toLowerCase();
-            if (key === konamiCode[konamiIndex] || e.code === konamiCode[konamiIndex]) {
-                konamiIndex++;
-                if (konamiIndex === konamiCode.length) {
-                    konamiMessage.style.display = 'block';
-                    document.body.style.transform = 'rotate(360deg)';
-                    setTimeout(() => {
-                        konamiMessage.style.display = 'none';
-                        document.body.style.transform = 'rotate(0deg)';
-                    }, 3000);
-                    konamiIndex = 0;
-                }
-            } else {
-                konamiIndex = 0;
-            }
-        });
-
-        // Title changes when you leave the tab
-        let originalTitle = document.title;
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                document.title = '👋 Come back!';
-            } else {
-                document.title = originalTitle;
-            }
-        });
-
-        // Double-click h1 to make it rainbow
-        const h1 = document.querySelector('h1');
-        h1.addEventListener('dblclick', () => {
-            h1.style.background = 'linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet)';
-            h1.style.webkitBackgroundClip = 'text';
-            h1.style.webkitTextFillColor = 'transparent';
-            h1.style.backgroundClip = 'text';
-            setTimeout(() => {
-                h1.style.background = 'none';
-                h1.style.webkitTextFillColor = '#333';
-                h1.style.color = '#333';
-            }, 3000);
-        });
-    </script>
+    <main class="container">
+        <h1>dimhyena2222 (by abriene)</h1>
+        <p class="description">Developer focused on clean interfaces, reliable code, and practical web experiences.</p>
+        <nav class="links" aria-label="Primary">
+            <span class="link placeholder" aria-disabled="true">Placeholder</span>
+        </nav>
+        <p class="meta">Minimal portfolio.</p>
+    </main>
 </body>
 </html>
